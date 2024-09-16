@@ -34,3 +34,8 @@ class RefundForm(forms.Form):
     }))
     email = forms.EmailField()
 
+class PaymentForm(forms.Form):
+    
+    paymentToken = forms.CharField(required=False)
+    save = forms.BooleanField(required=False)
+    use_default = forms.BooleanField(required=False)
