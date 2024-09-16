@@ -14,8 +14,6 @@ CATEGORY_CHOICES = (
     ("SP","Sports")
 )
 
-
-
 SIZE_CHOICES = (
     ("XS", "Extra Small"),
     ("S", "Small"),
@@ -23,8 +21,6 @@ SIZE_CHOICES = (
     ("M", "Medium"),
     ("XL", "Extra Large")
 )
-
-
 
 ADDRESS_CHOICES = (
     ("B", "Billing"),
@@ -38,7 +34,7 @@ class UserProfile(models.Model):
     one_click_purchasing = models.BooleanField(default=False)
     
     def __str__(self):
-        self.user.username
+        self.user.userid
     
 class Item(models.Model):
     title = models.CharField(max_length=100)
