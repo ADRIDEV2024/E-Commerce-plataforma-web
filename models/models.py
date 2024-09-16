@@ -14,6 +14,8 @@ CATEGORY_CHOICES = (
     ("SP","Sports")
 )
 
+
+
 SIZE_CHOICES = (
     ("XS", "Extra Small"),
     ("S", "Small"),
@@ -21,6 +23,8 @@ SIZE_CHOICES = (
     ("M", "Medium"),
     ("XL", "Extra Large")
 )
+
+
 
 ADDRESS_CHOICES = (
     ("B", "Billing"),
