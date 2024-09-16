@@ -117,3 +117,4 @@ def get_total(self):
     if self.coupon:
         total -= self.coupon.amount
     return total
+
