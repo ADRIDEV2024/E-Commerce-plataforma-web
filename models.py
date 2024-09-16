@@ -48,7 +48,13 @@ class Item(models.Model):
     
     def __str__(self):
         self.title
-    
+    def placeOrder(self): 
+        self.save() 
+  
+    @staticmethod
+    def get_orders_by_customer(customer_id): 
+            return Order.objects.filter(customer=customer_id).order_by('-date') 
+        
 def get_absolute_url(self):
         return reverse("That´s my shirt!:product", kwargs={
             "slug": self.slug })
