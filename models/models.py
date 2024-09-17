@@ -5,27 +5,6 @@ from django.db.models import Sum
 from django.shortcuts import reverse
 from django_countries.fields import CountryField
 
-CATEGORY_CHOICES = (
-    ("S", "Shirts"),
-    ("P", "Pants"),
-    ("J", "Jackets"),
-    ("C", "Coats"),
-    ("H", "Hoodies"),
-    ("SP","Sports")
-)
-
-SIZE_CHOICES = (
-    ("XS", "Extra Small"),
-    ("S", "Small"),
-    ("L", "Large"),
-    ("M", "Medium"),
-    ("XL", "Extra Large")
-)
-
-ADDRESS_CHOICES = (
-    ("B", "Billing"),
-    ("S", "Shipping"),
-)
 
 class UserProfile(models.Model):
     user = models.OneToOneField(
