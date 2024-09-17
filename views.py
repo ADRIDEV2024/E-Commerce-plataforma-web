@@ -73,6 +73,7 @@ class CheckoutView(View):
             #It attempts to retrieve the current order for the logged-in user that has not been completed.
             order = Order.objects.get(user=self.request.user, ordered=False)
             if form.is_valid():
+                #If the form is valid, it processes the shipping and billing addresses using helper methods.
                 self.handle_shipping_address(form, order)
                 self.handle_billing_address(form, order)
                 return redirect('That´s my shirt!:checkout')
