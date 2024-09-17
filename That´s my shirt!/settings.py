@@ -10,11 +10,25 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
+from dotenv import load_dotenv
 from pathlib import Path
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+import json 
+
+DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.getenv(MY_DB_NAME),
+            'USER': os.getenv(USERNAME),
+            'PASSWORD': PASSWORD_FOR_DB,
+            'HOST': LOCAL_HOST
+        }
+    }
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -69,15 +83,6 @@ TEMPLATES = [
     },
 ]
 
-DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': YOUR_DB_NAME,
-            'USER': USERNAME,
-            'PASSWORD': PASSWORD_FOR_DB,
-            'HOST': LOCAL_HOST
-        }
-    }
 
 ASGI_APPLICATION = "That´s my shirt!.asgi.application"
 
