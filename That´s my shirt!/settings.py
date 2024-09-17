@@ -69,6 +69,16 @@ TEMPLATES = [
     },
 ]
 
+DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': YOUR_DB_NAME,
+            'USER': USERNAME,
+            'PASSWORD': PASSWORD_FOR_DB,
+            'HOST': LOCAL_HOST
+        }
+    }
+
 ASGI_APPLICATION = "That´s my shirt!.asgi.application"
 
 STATIC_URL = "static/"
