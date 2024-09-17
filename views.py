@@ -70,6 +70,7 @@ class CheckoutView(View):
      def post(self, *args, **kwargs):
         form = CheckoutForm(self.request.POST or None)
         try:
+            #It attempts to retrieve the current order for the logged-in user that has not been completed.
             order = Order.objects.get(user=self.request.user, ordered=False)
             if form.is_valid():
                 self.handle_shipping_address(form, order)
