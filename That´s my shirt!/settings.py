@@ -22,11 +22,12 @@ import json
 
 DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': os.getenv(MY_DB_NAME),
-            'USER': os.getenv(USERNAME),
-            'PASSWORD': PASSWORD_FOR_DB,
-            'HOST': LOCAL_HOST
+            "ENGINE": 'django.db.backends.postgresql',
+            "NAME": os.getenv(MY_DB_NAME),
+            "USER": os.getenv(USERNAME),
+            "PASSWORD": os.getenv(PASSWORD_FOR_DB),
+            "HOST": os.getenv(LOCAL_HOST),
+            "PORT": 8000
         }
     }
 
@@ -34,10 +35,10 @@ DATABASES = {
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-80ug*1m0m_)49yz&iocybuj7$#m9w$8%+qzic4ro&rp#m%!s&b"
+SECRET_KEY = os.getenv(SECRET_KEY)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
