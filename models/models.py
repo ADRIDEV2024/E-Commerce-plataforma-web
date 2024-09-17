@@ -42,7 +42,7 @@ class Item(models.Model):
     label = models.CharField(choices=SIZE_CHOICES, max_length=2)
     
     description = models.TextField()
-    image = models.ImageField()
+    image = models.ImageField(upload_to = "items/)
     
     def __str__(self):
         self.title
