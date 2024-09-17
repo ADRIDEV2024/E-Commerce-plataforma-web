@@ -6,6 +6,25 @@ from django.shortcuts import reverse
 from django_countries.fields import CountryField
 
 
+class CategoryChoices(models.TextChoices):
+    SHIRTS = "S", "Shirts"
+    PANTS = "P", "Pants"
+    JACKETS = "J", "Jackets"
+    COATS = "C", "Coats"
+    HOODIES = "H", "Hoodies"
+    SPORTS = "SP", "Sports"
+
+class SizeChoices(models.TextChoices):
+    EXTRA_SMALL = "XS", "Extra Small"
+    SMALL = "S", "Small"
+    LARGE = "L", "Large"
+    MEDIUM = "M", "Medium"
+    EXTRA_LARGE = "XL", "Extra Large"
+
+class AddressChoices(models.TextChoices):
+    BILLING = "B", "Billing"
+    SHIPPING = "S", "Shipping"
+
 class UserProfile(models.Model):
     user = models.OneToOneField(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
