@@ -106,7 +106,7 @@ class Order(models.Model):
     refund_granted = models.BooleanField(default=False)
     
 def __str__(self):
-    return self.user.username
+        return f"Order {self.ref_code} by {self.user.username}
     
 def get_total(self):
     total = 0
