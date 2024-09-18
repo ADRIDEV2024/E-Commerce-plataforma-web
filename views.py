@@ -39,7 +39,6 @@ def is_valid_form(values):
 
 class CheckoutView(View):
      """
-    Handles the checkout process for the e-commerce platform.
 
     The CheckoutView class is responsible for managing the checkout process.
     It retrieves the user's current order, initializes the necessary forms,
