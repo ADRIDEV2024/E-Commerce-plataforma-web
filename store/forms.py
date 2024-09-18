@@ -24,7 +24,7 @@ class CheckoutForm(forms.Form):
     use_default_billing = forms.BooleanField(required=False)
     
     payment_option = forms.ChoiceField(
-        widget=forms.RadioSelect, choices=PAYMENT_CHOICES)
+    widget=forms.RadioSelect, choices=PAYMENT_CHOICES)
 
 class RefundForm(forms.Form):
      # A field for the user to enter the reference code of the order.
