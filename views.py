@@ -33,7 +33,7 @@ def products(request):
     return render(request, "products.html", context)
 
 
-def is_valid_form(request):
+def is_valid_form(values):
     return all(field != '' for field in values)
 
 
@@ -56,8 +56,7 @@ class CheckoutView(View):
                 'form': form,
                 'couponform': CouponForm(),
                 'order': order,
-                'DISPLAY_COUPON_FORM': True
-            }
+               
 
             self.add_default_addresses_to_context(context)
 
