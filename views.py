@@ -56,8 +56,9 @@ class CheckoutView(View):
                 'form': form,
                 'couponform': CouponForm(),
                 'order': order,
+                'DISPLAY_COUPON_FORM': True
+            }
                
-
             self.add_default_addresses_to_context(context)
 
             return render(self.request, "checkout.html", context)
