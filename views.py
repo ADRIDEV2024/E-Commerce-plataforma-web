@@ -33,7 +33,7 @@ def products(request):
     return render(request, "products.html", context)
 
 
-def is_valid_form(values):
+def is_valid_form(request):
     return all(field != '' for field in values)
 
 
