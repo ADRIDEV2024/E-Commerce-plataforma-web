@@ -9,15 +9,15 @@ PAYMENT_CHOICES = (
 
 class CheckoutForm(forms.Form):
     
-    shipping_address = forms.CharField(required=False)
+    shipping_address = forms.CharField(required=True)
     shipping_address2 = forms.CharField(required=False)
     shipping_zip = forms.CharField(required=False)
 
-    billing_address = forms.CharField(required=False)
+    billing_address = forms.CharField(required=True)
     billing_address2 = forms.CharField(required=False)
     billing_zip = forms.CharField(required=False)
 
-    same_billing_address = forms.BooleanField(required=False)
+    same_billing_address = forms.BooleanField(required=True)
     set_default_shipping = forms.BooleanField(required=False)
     use_default_shipping = forms.BooleanField(required=False)
     set_default_billing = forms.BooleanField(required=False)
