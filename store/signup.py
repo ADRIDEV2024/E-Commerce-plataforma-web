@@ -15,7 +15,7 @@ class SignupView(View):
 
         if not error_message:
             self.register_customer(customer)
-            return redirect('homepage')
+            return redirect('home')
         else:
             return self.render_with_error(request, error_message, customer)
 
