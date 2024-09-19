@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.core.exceptions import ObjectDoesNotExist
+from django.core.exceptions import ObjectDoesNotFound
 from django.shortcuts import redirect
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
@@ -61,7 +61,7 @@ class CheckoutView(View):
             self.add_default_addresses_(context)
 
             return render(self.request, "checkout.html", context)
-        except ObjectDoesNotExist:
+        except ObjectDoesNotFound:
             messages.info(self.request, "Oops :( maybe you don't have an active order")
             return redirect("That´s my shirt!:checkout")
 
