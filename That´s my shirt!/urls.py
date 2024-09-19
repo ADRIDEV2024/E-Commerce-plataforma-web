@@ -3,8 +3,7 @@ from django.urls import path
 from .views_2 import LoginView, LogoutView, SignupView
 from .views import ( products, CheckoutView, HomeView, OrderSummaryView,
     add_to_cart, remove_from_cart, remove_single_item_from_cart, PaymentView,
-    AddCouponView, RequestRefundView
-)
+    AddCouponView, RequestRefundView )
 
 
 app_name = "That´s my shirt!"
