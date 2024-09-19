@@ -32,7 +32,7 @@ class RefundForm(forms.Form):
     # A field for the user to enter a message explaining the reason for the refund.
     # The widget is set to a Textarea with 4 rows.
     message = forms.CharField(widget=forms.Textarea(attrs={
-        'rows': 4
+        'rows': 6
     }))
     email = forms.EmailField()
 
