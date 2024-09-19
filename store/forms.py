@@ -1,10 +1,10 @@
 from django import forms
 
 
-PAYMENT_CHOICES = (
+PAYMENT_CHOICES = [
     ('V', 'Visa'),
     ('P', 'PayPal')
-)
+]
 
 
 class CheckoutForm(forms.Form):
