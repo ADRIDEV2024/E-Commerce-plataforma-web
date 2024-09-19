@@ -16,7 +16,7 @@ class Customer(models.Model):
 	def get_customer_by_email(email): 
 		try: 
 			return Customer.objects.get(email=email) 
-		except: 
+		except Exception: 
 			return False
 
 	def isExists(self): 
