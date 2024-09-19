@@ -58,7 +58,7 @@ class CheckoutView(View):
                 'DISPLAY_COUPON_FORM': True
             }
                
-            self.add_default_addresses_to_context(context)
+            self.add_default_addresses_(context)
 
             return render(self.request, "checkout.html", context)
         except ObjectDoesNotExist:
@@ -82,7 +82,7 @@ class CheckoutView(View):
             messages.info(self.request, "Oops :( maybe you don't have an active order")
             return redirect("That´s my shirt!:checkout")
 
-     def add_default_addresses_to_context(self, context):
+     def add_default_addresses_(self, context):
         shipping_address = Address.objects.filter(
             user=self.request.user,
             address_type='S',
