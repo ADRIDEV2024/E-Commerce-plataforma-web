@@ -87,8 +87,8 @@ TEMPLATES = [
 
 ASGI_APPLICATION = "That´s my shirt!.asgi.application"
 
-STATIC_URL = "static/css/"
-STATICFILES_DIRS = [BASE_DIR / "static/css/"]  
+STATIC_URL = "static/"
+STATICFILES_DIRS = [BASE_DIR / "static/"]  
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
 STORAGES = {
