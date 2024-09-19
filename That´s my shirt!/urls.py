@@ -1,23 +1,30 @@
-"""
-URL configuration for E-commerce project.
+from django.contrib import admin 
+from django.urls import path
+from .views_2 import LoginView, LogoutView, SignupView
+from .views import ( products, CheckoutView, HomeView, OrderSummaryView,
+    add_to_cart, remove_from_cart, remove_single_item_from_cart, PaymentView,
+    AddCouponView, RequestRefundView
+)
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
-from django.contrib import admin
-from django.urls import path,include
+
+app_name = "That´s my shirt!"
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
-    path("",include("store.urls")),
+    
+    path("", HomeView.as_view(), name='home'),
+    path('store', store, name='store'), 
+    path('signup', Signup.as_view(), name='signup'), 
+    path('login', Login.as_view(), name='login'), 
+    path('logout', logout, name='logout'), 
+    path('checkout/', CheckoutView.as_view(), name='checkout'),
+    path('order-summary/', OrderSummaryView.as_view(), name='order-summary'),
+    path('product/<slug>/', products.as_view(), name='products'),
+    path('add-to-cart/<slug>/', add_to_cart, name='add-to-cart'),
+    path('add-coupon/', AddCouponView.as_view(), name='add-coupon'),
+    path('remove-from-cart/<slug>/', remove_from_cart, name='remove-from-cart'),
+    path('remove-item-from-cart/<slug>/', remove_single_item_from_cart,
+         name='remove-single-item-from-cart'),
+    path('payment/<payment_option>/', PaymentView.as_view(), name='payment'),
+    path('request-refund/', RequestRefundView.as_view(), name='request-refund')
+
 ]
