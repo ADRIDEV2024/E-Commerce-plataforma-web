@@ -60,6 +60,6 @@ class CheckoutView(View):
                 'DISPLAY_COUPON_FORM': True
             }
 
-            self.add_default_addresses_to_context(context)
+            self.add_default_addresses(context)
 
             return render(self.request, "checkout.html", context)
