@@ -21,7 +21,7 @@ def products(request):
     and rendering them on the 'products.html' template. It creates a context
     dictionary containing all the items and passes it to the template for rendering.
 
-    Args:
+    Params:
         request (HttpRequest): The HTTP request object.
 
     Returns:
