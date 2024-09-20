@@ -6,7 +6,7 @@ from .views import ( products, CheckoutView, HomeView, OrderSummaryView,
     AddCouponView, RequestRefundView )
 
 
-app_name = "That´s my shirt!"
+#app_name = "That´s my shirt!"
 
 urlpatterns = [
     
