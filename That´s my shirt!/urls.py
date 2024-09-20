@@ -8,7 +8,7 @@ from .views import ( products, CheckoutView, HomeView, OrderSummaryView,
 
 
 
-urlpatterns = [
+url_patterns = [
     
     path("", HomeView.as_view(), name='home'),
     path('store', store, name='store'), 
