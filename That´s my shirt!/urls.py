@@ -12,9 +12,9 @@ url_patterns = [
     
     path("", HomeView.as_view(), name='home'),
     path('store', store, name='store'), 
-    path('signup', Signup.as_view(), name='signup'), 
-    path('login', Login.as_view(), name='login'), 
-    path('logout', Logout.as_view(), name='logout'), 
+    path('signup', SignupView.as_view(), name='signup'), 
+    path('login', LoginView.as_view(), name='login'), 
+    path('logout', LogoutView.as_view(), name='logout'), 
     path('checkout/', CheckoutView.as_view(), name='checkout'),
     path('order-summary/', OrderSummaryView.as_view(), name='order-summary'),
     path('product/<slug>/', products.as_view(), name='products'),
