@@ -14,7 +14,7 @@ import json
 
 DATABASES = {
         'default': {
-            "ENGINE": 'django.db.backends.mariadb',
+            "ENGINE": 'django.db.backends.mysql',
             "NAME": os.getenv(MY_DB_NAME),
             "USER": os.getenv(USERNAME),
             "PASSWORD": os.getenv(PASSWORD_FOR_DB),
@@ -23,7 +23,6 @@ DATABASES = {
         }
     }
 
-# Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
