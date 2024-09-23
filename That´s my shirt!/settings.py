@@ -14,7 +14,7 @@ import json
 
 DATABASES = {
         'default': {
-            "ENGINE": 'django.db.backends.postgresql',
+            "ENGINE": 'django.db.backends.mariadb',
             "NAME": os.getenv(MY_DB_NAME),
             "USER": os.getenv(USERNAME),
             "PASSWORD": os.getenv(PASSWORD_FOR_DB),
