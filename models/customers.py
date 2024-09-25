@@ -21,6 +21,6 @@ class Customer(models.Model):
 
 	def isExists(self): 
 		if Customer.objects.filter(email=self.email): 
-			return True
+		   return True
 
 		return False
