@@ -12,8 +12,8 @@ class Customer(models.Model):
 	def register(self): 
 		self.save() 
 
-	@staticmethod
-	def get_customer_by_email(email): 
+	@classmethod
+	def get_customer_by_email(cls, email): 
 		try: 
 			return Customer.objects.get(email=email) 
 		except Exception: 
