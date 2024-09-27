@@ -22,9 +22,6 @@ def products(request):
 
     Args:
         request (HttpRequest): The HTTP request object.
-
-    Returns:
-        HttpResponse: The rendered 'products.html' template with the context data.
     """
     context = {
         'items': Item.objects.all()
