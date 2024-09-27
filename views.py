@@ -37,9 +37,7 @@ def is_valid_form(values):
 
 
 class CheckoutView(View):
-     """
-
-    The CheckoutView class is responsible for managing the checkout process.
+     """  The CheckoutView class is responsible for managing the checkout process.
     It retrieves the user's current order, initializes the necessary forms,
     and renders the checkout page with the appropriate context. If no active
     order is found, it redirects the user to the checkout page with an informational message.
