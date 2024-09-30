@@ -31,12 +31,12 @@ class SignupView(View):
     def validate_customer(self, customer):
         validations = [
             (lambda: not customer.first_name, "Please Enter your First Name !!"),
-            (lambda: len(customer.first_name) < 3, 'First Name must be 3 char long or more'),
+            (lambda: len(customer.first_name) < 5, 'First Name must be 5 char long or more'),
             (lambda: not customer.last_name, 'Please Enter your Last Name'),
-            (lambda: len(customer.last_name) < 3, 'Last Name must be 3 char long or more'),
+            (lambda: len(customer.last_name) < 5, 'Last Name must be 5 char long or more'),
             (lambda: not customer.phone, 'Enter your Phone Number'),
             (lambda: len(customer.phone) < 10, 'Phone Number must be 10 char Long'),
-            (lambda: len(customer.password) < 5, 'Password must be 5 char long'),
+            (lambda: len(customer.password) < 8, 'Password must be 8 char long'),
             (lambda: len(customer.email) < 5, 'Email must be 5 char long'),
             (customer.isExists, 'Email Address Already Registered..')
         ]
