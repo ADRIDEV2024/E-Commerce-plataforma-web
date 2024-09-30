@@ -26,6 +26,8 @@ class CheckoutForm(forms.Form):
     payment_options = forms.ChoiceField(
     widget=forms.RadioSelect, choices=PAYMENT_CHOICES)
 
+
+
 class RefundForm(forms.Form):
      # A field for the user to enter the reference code of the order.
     ref_code = forms.CharField()
@@ -35,6 +37,8 @@ class RefundForm(forms.Form):
         'rows': 4
     }))
     email = forms.EmailField()
+
+
 
 class PaymentForm(forms.Form):
     
