@@ -1,6 +1,4 @@
-"""
-Django settings for E-commerce project.
-"""
+
 import os
 from dotenv import load_dotenv
 from pathlib import Path
