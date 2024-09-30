@@ -4,10 +4,10 @@ from django.contrib.auth.hashers import make_password
 from models import Customer
 
 class SignupView(View):
-    template_name = 'signup.html'
+    template_document = 'signup.html'
 
     def get(self, request):
-        return render(request, self.template_name)
+        return render(request, self.template_document)
 
     def post(self, request):
         customer = self.create_customer_from_post_data(request.POST)
