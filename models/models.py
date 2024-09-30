@@ -47,21 +47,16 @@ class Item(models.Model):
         self.title
     
 def get_absolute_url(self):
-        return reverse("That´s my shirt!:product", kwargs={"slug": self.slug })
+        return reverse("That´s my shirt!:product", kwargs={"slug": self.slug})
         
 def get_add_to_cart_url(self):
-        return reverse("That´s my shirt!:add-to-cart", kwargs={
-            'slug': self.slug
-        })
+        return reverse("That´s my shirt!:add-to-cart", kwargs={'slug': self.slug})
 
 def get_remove_from_cart_url(self):
-        return reverse("That´s my shirt!:remove-from-cart", kwargs={
-            'slug': self.slug
-        })
+        return reverse("That´s my shirt!:remove-from-cart", kwargs={'slug': self.slug})
 
 class OrderItem(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL,
-                             on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     ordered = models.BooleanField(default=False)
     item = models.ForeignKey(Item, on_delete=models.CASCADE)
     quantity = models.IntegerField(default=1)
@@ -83,19 +78,17 @@ class OrderItem(models.Model):
         return self.get_total_item_price()
 
 class Order(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL,
-                             on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     ref_code = models.CharField(max_length=20, blank=True, null=True)
     items = models.ManyToManyField(OrderItem)
     start_date = models.DateTimeField(auto_now_add=True)
     ordered_date = models.DateTimeField()
     ordered = models.BooleanField(default=False)
-    shipping_address = models.ForeignKey(
-        'Address', related_name='shipping_address', on_delete=models.SET_NULL, blank=True, null=True)
-    billing_address = models.ForeignKey(
-        'Address', related_name='billing_address', on_delete=models.SET_NULL, blank=True, null=True)
-    payment = models.ForeignKey(
-        'Payment', on_delete=models.SET_NULL, blank=True, null=True)
+    shipping_address = models.ForeignKey('Address', related_name='shipping_address', on_delete=models.SET_NULL, 
+                                         blank=True, null=True)
+    billing_address = models.ForeignKey('Address', related_name='billing_address', on_delete=models.SET_NULL, 
+                                         blank=True, null=True)
+    payment = models.ForeignKey('Payment', on_delete=models.SET_NULL, blank=True, null=True)
     coupon = models.ForeignKey(
         'Coupon', on_delete=models.SET_NULL, blank=True, null=True)
     being_delivered = models.BooleanField(default=False)
