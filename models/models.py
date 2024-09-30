@@ -26,8 +26,7 @@ class AddressChoices(models.TextChoices):
     SHIPPING = "S", "Shipping"
 
 class UserProfile(models.Model):
-    user = models.OneToOneField(
-        settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     customer_id = models.CharField(max_length=50, blank=True, null=True)
     one_click_purchasing = models.BooleanField(default=False)
     
@@ -48,8 +47,7 @@ class Item(models.Model):
         self.title
     
 def get_absolute_url(self):
-        return reverse("That´s my shirt!:product", kwargs={
-            "slug": self.slug })
+        return reverse("That´s my shirt!:product", kwargs={"slug": self.slug })
         
 def get_add_to_cart_url(self):
         return reverse("That´s my shirt!:add-to-cart", kwargs={
