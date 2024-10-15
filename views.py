@@ -61,7 +61,7 @@ class CheckoutView(View):
             return render(self.request, "checkout.html", context)
             
         except ObjectDoesNotExist:
-            messages.info(self.request, "Oops :( maybe you don't have an active order")
+            messages.warning(self.request, "Oops :( maybe you don't have an active order")
             return redirect("That´s my shirt!:checkout")
 
      def post(self, *args, **kwargs):
@@ -76,11 +76,11 @@ class CheckoutView(View):
                 self.handle_billing_address(form, order)
                 return redirect('That´s my shirt!:checkout')
             else:
-                messages.info(self.request, "Please correct the errors in the form")
+                messages.warning(self.request, "Please correct the errors in the form")
                 return redirect('That´s my shirt!:checkout')
                 
         except ObjectDoesNotExist:
-            messages.info(self.request, "Oops :( maybe you don't have an active order")
+            messages.warning(self.request, "Oops :( maybe you don't have an active order")
             return redirect("That´s my shirt!:checkout")
 
      def add_default_addresses_(self, context):
