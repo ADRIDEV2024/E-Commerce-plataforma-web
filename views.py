@@ -20,11 +20,10 @@ def products(request):
     and rendering them on the 'products.html' template. It creates a context
     dictionary containing all the items and passes it to the template for rendering.
 
-    :Params:
-        request (HttpRequest): The HTTP request object.
+    :Params: request (HttpRequest): The HTTP request object.
 
-    ::Return:
-        HttpResponse: The rendered 'products.html' template with the context data.
+    :Return: HttpResponse: The rendered 'products.html' template with the context data.
+    
     """
     context = {
         'items': Item.objects.all()
