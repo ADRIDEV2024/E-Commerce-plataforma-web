@@ -44,6 +44,7 @@ class CheckoutView(View):
     Methods:
         get(self, *args, **kwargs): Handles GET requests to display the checkout page.
     """
+    
      def get(self, *args, **kwargs):
         try:
             order = Order.objects.get(user=self.request.user, ordered=False)
@@ -68,6 +69,7 @@ class CheckoutView(View):
         try:
             #It attempts to retrieve the current order for the logged-in user that has not been completed.
             order = Order.objects.get(user=self.request.user, ordered=False)
+            
             if form.is_valid():
                 #If the form is valid, it processes the shipping and billing addresses using helper methods.
                 self.handle_shipping_address(form, order)
@@ -76,6 +78,7 @@ class CheckoutView(View):
             else:
                 messages.info(self.request, "Please correct the errors in the form")
                 return redirect('That´s my shirt!:checkout')
+                
         except ObjectDoesNotExist:
             messages.info(self.request, "Oops :( maybe you don't have an active order")
             return redirect("That´s my shirt!:checkout")
