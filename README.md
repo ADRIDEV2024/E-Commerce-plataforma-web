@@ -1,8 +1,7 @@
 # That´s My Shirt!
 ## E-Commerce plataforma web
 
-![LOGO](<img width="225" alt="Camiseta_colores" src="https://github.com/user-attachments/assets/1f19ddac-214d-4df9-ab1c-ba7c3e966418">)
-
+![LOGO]()<img width="225" alt="Camiseta_colores(1)" src="https://github.com/user-attachments/assets/55456098-cfcc-449e-8beb-2317b7bea92e">
 
 That´s My Shirt👕es una plataforma pensada para la compra-venta de productos de moda y calzado que incluye categorías las cuáles se dividen según el nombre de la prenda, su tipo, las diferentes tallas existentes y también por marcas populares.
 Las principales tecnologías empleadas para el desarrollo de este proyecto han sido Python🐍, el framework Django, HTML y MySQL(Para la db de los compradores).
